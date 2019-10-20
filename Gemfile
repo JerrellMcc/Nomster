@@ -74,3 +74,5 @@ gem 'simple_form'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'will_paginate-bootstrap4'
+gem "geocoder"
+gem "figaro"
