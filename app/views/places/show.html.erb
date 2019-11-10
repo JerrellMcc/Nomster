@@ -77,6 +77,11 @@
     </div>
   </div>
 
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :caption %>
+  <%= f.input :picture %>
+  <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+<% end %>
 
   <div class="row">
     <% @place.comments.each do |comment| %>
@@ -92,4 +97,17 @@
     <% end %>
   </div>
 
+</div>
+
+<div class="row col-10 offset-1">
+  <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <blockquote class="photo-display">
+        <%= image_tag photo.picture.url, class: 'show-image-size' %>
+        <p><% if photo.caption.present? %>
+        <%= photo.caption %></p>
+        <% end %>
+        </blockquote>
+    </div>
+  <% end %>
 </div>

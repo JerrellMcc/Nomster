@@ -1,0 +1,2 @@
+class Photorail < ApplicationRecord
+end
